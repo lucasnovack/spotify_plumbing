@@ -5,6 +5,9 @@ from typing import Optional
 import requests
 from dotenv import load_dotenv
 
+### DEPRECATED!!!!!
+### FROM NOW AND BEYOND, THIS PROJECT WILL USE SPOTIPY, MAKING THIS AUTH CODE OBSOLETE
+
 
 class SpotifyAuthenticationError(Exception):
     "Basic auth error"

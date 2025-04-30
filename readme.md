@@ -1,0 +1,1 @@
+Data project to explore bits and pieces of the mighty spotify API.
