@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Plumbing - Dashboard</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="bg-dark text-white">
+    <div class="container py-5">
+        <h1 class="display-4 mb-4 text-spotify-green">Your Dashboard</h1>
+        <p class="lead mb-5">Choose the card that sparks your curiosity.</p>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card bg-dark border-light h-100">
+                    <div class="card-body text-center">
+                        <h3 class="card-title text-spotify-green">Top Track</h3>
+                        <p class="card-text">Your most played songs</p>
+                        <a href="{{ url_for('routes.stats') }}" class="btn btn-spotify">Explore</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card bg-dark border-light h-100">
+                    <div class="card-body text-center">
+                        <h3 class="card-title text-spotify-green">Top Artists</h3>
+                        <p class="card-text">Discover your favorite artists</p>
+                        <a href="{{ url_for('routes.top_artists') }}" class="btn btn-spotify">Explore</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card bg-dark border-light h-100">
+                    <div class="card-body text-center">
+                        <h3 class="card-title text-spotify-green">General Statistics</h3>
+                        <p class="card-text">Most of this is just standard data provided by Spotify.</p>
+                        <a href="{{ url_for('routes.general_stats') }}" class="btn btn-spotify">Explore</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="/" class="btn btn-spotify btn-lg mt-5">Go back</a>
+    </div>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
