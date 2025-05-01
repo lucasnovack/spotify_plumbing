@@ -3,4 +3,5 @@
 __pycache__/
 *.ipynb
 .cache
-data/*
+data/*/*.json
+data/*/*.csv
