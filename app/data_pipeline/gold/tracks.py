@@ -2,7 +2,16 @@ import pandas as pd
 import os
 import json
 
-def process_gold_data(silver_file):
+def process_gold_tracks(silver_file):
+    """
+    Process Silver tracks data into aggregated statistics and top tracks.
+
+    Args:
+        silver_file (str): Path to the Silver CSV file containing tracks data.
+
+    Returns:
+        str: Path to the saved Gold JSON file.
+    """
     df = pd.read_csv(silver_file)
     
     stats = {
@@ -22,4 +31,5 @@ def process_gold_data(silver_file):
     with open(output_path, "w") as f:
         json.dump({"stats": stats, "top_tracks": top_tracks.to_dict(orient="records")}, f, indent=4)
     
+    print(f"Gold tracks data saved to: {output_path}")
     return output_path

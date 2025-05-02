@@ -1,9 +1,9 @@
 from flask import Blueprint, redirect, render_template, session
 from app.utils.spotify_auth import get_spotify_client
 from app.utils.file_cleanup import cleanup_old_files
-from app.data_pipeline.bronze import fetch_and_save_bronze_data
-from app.data_pipeline.silver import process_silver_data
-from app.data_pipeline.gold import process_gold_data
+from app.data_pipeline.bronze.tracks import fetch_and_save_bronze_tracks
+from app.data_pipeline.silver.tracks import process_silver_tracks
+from app.data_pipeline.gold.tracks import process_gold_tracks
 import json
 
 stats_bp = Blueprint("stats", __name__, template_folder="../templates")
@@ -17,9 +17,9 @@ def stats():
     cleanup_old_files("data/silver/", max_files=5, file_extension="*.csv")
     cleanup_old_files("data/gold/", max_files=5, file_extension="*.json")
     
-    bronze_file = fetch_and_save_bronze_data()
-    silver_file = process_silver_data(bronze_file)
-    gold_file = process_gold_data(silver_file)
+    bronze_file = fetch_and_save_bronze_tracks()
+    silver_file = process_silver_tracks(bronze_file)
+    gold_file = process_gold_tracks(silver_file)
     
     with open(gold_file, "r") as f:
         stats_data = json.load(f)
@@ -52,9 +52,9 @@ def general_stats():
     cleanup_old_files("data/silver/", max_files=5, file_extension="*.csv")
     cleanup_old_files("data/gold/", max_files=5, file_extension="*.json")
     
-    bronze_file = fetch_and_save_bronze_data()
-    silver_file = process_silver_data(bronze_file)
-    gold_file = process_gold_data(silver_file)
+    bronze_file = fetch_and_save_bronze_tracks()
+    silver_file = process_silver_tracks(bronze_file)
+    gold_file = process_gold_tracks(silver_file)
     
     with open(gold_file, "r") as f:
         stats_data = json.load(f)

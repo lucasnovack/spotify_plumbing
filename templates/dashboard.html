@@ -17,7 +17,8 @@
             <div class="col-md-4">
                 <div class="card bg-dark border-light h-100">
                     <div class="card-body text-center">
-                        <h3 class="card-title text-spotify-green">Top Track</h3>
+                        <h3 class="card-title text-spotify-green">Top Tracks</h3>
+                        <p class="spotify-data mb-3">Powered by Spotify</p>
                         <p class="card-text">Your most played songs</p>
                         <a href="{{ url_for('stats.stats') }}" class="btn btn-spotify">Explore</a>
                     </div>
@@ -27,6 +28,7 @@
                 <div class="card bg-dark border-light h-100">
                     <div class="card-body text-center">
                         <h3 class="card-title text-spotify-green">Top Artists</h3>
+                        <p class="spotify-data mb-3">Powered by Spotify</p>
                         <p class="card-text">Discover your favorite artists</p>
                         <a href="{{ url_for('stats.top_artists') }}" class="btn btn-spotify">Explore</a>
                     </div>
@@ -36,6 +38,7 @@
                 <div class="card bg-dark border-light h-100">
                     <div class="card-body text-center">
                         <h3 class="card-title text-spotify-green">General Statistics</h3>
+                        <p class="spotify-data mb-3">Powered by Spotify</p>
                         <p class="card-text">Most of this is just standard data provided by Spotify.</p>
                         <a href="{{ url_for('stats.general_stats') }}" class="btn btn-spotify">Explore</a>
                     </div>

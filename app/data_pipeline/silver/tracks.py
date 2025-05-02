@@ -1,7 +1,16 @@
 import pandas as pd
 import os
 
-def process_silver_data(bronze_file):
+def process_silver_tracks(bronze_file):
+    """
+    Process raw tracks data from Bronze layer into a normalized CSV.
+
+    Args:
+        bronze_file (str): Path to the Bronze JSON file containing tracks data.
+
+    Returns:
+        str: Path to the saved Silver CSV file.
+    """
     df = pd.read_json(bronze_file)
     
     tracks = df["items"]
@@ -22,4 +31,5 @@ def process_silver_data(bronze_file):
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
     df_silver.to_csv(output_path, index=False)
     
+    print(f"Silver tracks data saved to: {output_path}")
     return output_path

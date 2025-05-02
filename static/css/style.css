@@ -9,7 +9,7 @@ body {
 
 .btn-spotify {
     background-color: #1DB954;
-    color: #ffffff !important;
+    color: #ffffff !important; 
     border: none;
     padding: 12px 24px;
     font-size: 1.2rem;
@@ -60,6 +60,13 @@ a.btn-spotify {
     border-color: #333333;
 }
 
+.spotify-data {
+    color: #b3b3b3;
+    font-size: 0.85rem;
+    font-style: italic;
+    margin: 0;
+}
+
 .card-text{
-    color: #ffffff !important;
+    color: #ffffff
 }
